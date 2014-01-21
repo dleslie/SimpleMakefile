@@ -3,6 +3,24 @@ SimpleMakefile
 
 A Makefile for Simplified C/C++/Scheme Development
 
+Requirements
+============
+
+* GNU Make
+* GCC/G++ or Clang
+* etags (or edit Makefile.Setup.mk to point it at something else)
+* (optionally) chibi-scheme
+
+And some form of:
+
+* sh
+* find
+* cat
+* rm
+* cp
+* echo
+* ln
+
 Files
 =====
 
@@ -90,5 +108,4 @@ BINFILE=$(UNITNAME)
 include ../../Makefile.Build.mk
 ```
 
-Details
-=======
+Every binary and library folder can contain any number of subfolders with source files. The Makefile uses find to locate all source files in the sub-tree.

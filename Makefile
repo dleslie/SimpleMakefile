@@ -3,7 +3,7 @@
 # This tells the Makefile where to find the source files
 SUBDIRS=src
 
-# VC_VERSION will be set as a preprocessor define
+# VERSION will be set as a preprocessor define
 export VC_VERSION=$(shell git rev-parse HEAD)
 
 # The following is how I configure a hobby project I'm working on
@@ -24,6 +24,6 @@ export VC_VERSION=$(shell git rev-parse HEAD)
 
 # This is a bunch of magic to make Clang play nice with GNU std libs
 export CPP=clang -std=c++11 -pthread -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8
-export CC=clang -std=c++11 -pthread -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8
+export CC=clang -std=c11 -pthread -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 -D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8
 
 include Makefile.Setup.mk
